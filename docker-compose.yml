@@ -13,7 +13,7 @@ services:
       - LANG=de
 
       # Required Hostname
-      - WG_HOST=127.0.0.1
+      - WG_HOST=52.220.142.94
 
       # Custom Ports to Forward (read in entrypoint.sh)
       - PORTS=5050,5051,5052,5053,5054,5055,6666,7777,8888,9090,25565
@@ -23,7 +23,7 @@ services:
       # - WG_PORT=51820
       # - PORT=51821
       # - WG_CONFIG_PORT=92820
-      - WG_DEFAULT_ADDRESS=10.8.0.x
+      - WG_DEFAULT_ADDRESS=10.8.0.2
       # - WG_DEFAULT_DNS=1.1.1.1
       # - WG_MTU=1420
       # - WG_ALLOWED_IPS=192.168.15.0/24,10.0.1.0/24
