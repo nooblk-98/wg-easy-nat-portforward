@@ -57,5 +57,12 @@ ENV INIT_ENABLED=false
 
 LABEL org.opencontainers.image.source=https://github.com/wg-easy/wg-easy
 
-# Run Web UI
-CMD ["/usr/bin/dumb-init", "node", "server/index.mjs"]
+
+# Copy .env and entrypoint
+COPY entrypoint.sh /usr/local/bin/wg-entrypoint.sh
+COPY .env /app/.env
+RUN chmod +x /usr/local/bin/wg-entrypoint.sh
+
+# Override ENTRYPOINT and CMD
+ENTRYPOINT ["/usr/local/bin/wg-entrypoint.sh"]
+CMD ["node", "server/index.mjs"]
